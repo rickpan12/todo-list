@@ -1,11 +1,15 @@
 const express = require('express')
 const app = express()
+const tasks = require('./routes/tasks.js')
+
+//middleware
+app.use(express.json())
+app.use('/api/v1/tasks', tasks)
 
 const PORT = 3000
 
-//routes
-app.get('/', (req,res)=> {
-    res.send('To do list')
+app.get('/home', (req,res) => {
+    res.send('Home')
 })
 
 
