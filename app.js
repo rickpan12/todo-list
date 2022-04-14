@@ -1,9 +1,9 @@
-//to be changed
-require('./db/connect')
-
 const express = require('express')
 const app = express()
 const tasks = require('./routes/tasks.js')
+//connect DB
+const connectDB = require('./db/connect')
+
 
 //middleware
 app.use(express.json())
@@ -15,7 +15,19 @@ app.get('/home', (req,res) => {
     res.send('Home')
 })
 
+const start = async () => {
+    try {
+        await connectDB()
+        app.listen(PORT, ()=> {
+            console.log(`Server listening on port ${PORT}...`)
+        })
+    }
+    catch (error) {
+        console.log(error)
+    }
+}
 
-app.listen(PORT, ()=> {
-    console.log(`Server listening on port ${PORT}...`)
-})
+start()
+
+
+
