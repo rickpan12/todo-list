@@ -1,10 +1,8 @@
 const mongoose = require('mongoose')
 
-const CONNECTION_URL = 'mongodb+srv://admin:admin@cluster0.2b0b7.mongodb.net/ToDoList?retryWrites=true&w=majority'
-
 const connectDB = (url) => {
     mongoose
-    .connect(CONNECTION_URL)
+    .connect(url)
     .then(console.log('DB connection successful'))
 }
 
