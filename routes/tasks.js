@@ -1,5 +1,4 @@
 const express = require('express')
-const { del } = require('express/lib/application')
 const router = express.Router()
 
 const {getAllTasks,createTask, getTask, updateTask, deleteTask} = require('../controllers/tasks.js')
