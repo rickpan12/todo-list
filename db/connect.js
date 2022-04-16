@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+//connect to mongodb
 const connectDB = (url) => {
     return mongoose
     .connect(url)
