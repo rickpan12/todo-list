@@ -1,12 +1,11 @@
 const mongoose = require('mongoose')
 
 const connectDB = (url) => {
-    mongoose
+    return mongoose
     .connect(url)
     .then(console.log('DB connection successful'))
 }
 
 module.exports = connectDB
 
-    
-    // .catch((error)=> {console.log(error)})
+
